@@ -119,7 +119,7 @@ class TubeUp(object):
 
         def ydl_progress_each(entry):
             if not entry:
-                self.logger.warning('Video "%s" is not available. Skipping.' % url)
+                self.logger.warning('Video "%s" is not available. Skipping.', url)
                 return
             if ydl.in_download_archive(entry):
                 return
@@ -190,8 +190,7 @@ class TubeUp(object):
                     downloaded_files_basename.update(self.create_basenames_from_ydl_info_dict(ydl, info_dict))
 
         self.logger.debug(
-            'Basenames obtained from url (%s): %s'
-            % (url, downloaded_files_basename))
+            'Basenames obtained from url (%s): %s', url, downloaded_files_basename)
 
         return downloaded_files_basename
 
@@ -206,8 +205,7 @@ class TubeUp(object):
                            the `info_dict`.
         """
         info_type = info_dict.get('_type', 'video')
-        self.logger.debug('Creating basenames from ydl info dict with type %s'
-                          % info_type)
+        self.logger.debug('Creating basenames from ydl info dict with type %s', info_type)
 
         filenames = set()
 
